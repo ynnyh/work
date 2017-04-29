@@ -1,0 +1,14 @@
+<div class="panel panel-{{data.color}} text-center"
+     style="width:250px;position:absolute;left:{{position.left}}px;top:{{position.top}}px">
+    <div class="panel-heading" style="cursor:move">{{data.title}}</div>
+    <div class="panel-body">
+        <textarea id="" style="border:none;box-shadow:none;resize:none;outline:none" ng-model="data.content"></textarea>
+    </div>
+    <div ng-click="dele()" style="position:absolute;
+    top:5px;right:5px">
+        <span class="glyphicon glyphicon-remove"></span>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-{{v}}" ng-repeat="v in colors track by $index" ng-click="data.color=v"></button>
+    </div>
+</div>

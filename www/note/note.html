@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>便签</title>
+</head>
+<style>
+    .cont{
+        position:fixed;
+        width:100%;
+        height:100%;
+        top:50px;
+        left:0;
+        right:0;
+        margin:auto;
+        background:#eee;
+        box-sizing:border-box;
+        padding:0 20px;
+    }
+    .footer{
+        width:100%;
+        position:fixed;
+        bottom:42px;
+        left:0;
+        right:0;
+        margin:auto;
+    }
+    .line{
+        width:80%;
+        height:2px;
+        border-radius:50%;
+        background:#fff;
+        margin-bottom:5px;
+    }
+    .word{
+        color:#000;
+        font-size:18px;
+        text-align:center;
+    }
+</style>
+<body>
+    <div>
+        <div class="cont" ng-dblclick="add($event)">
+            <note-content ng-repeat="v in lists track by $index" data="v" position="v.position" dele="del(v.id)" colors="['primary','info','success','warning','danger']"></note-content>
+        </div>
+        <div class="footer">
+            <div class="line"></div>
+            <p class="word">copyright 2017 by yuehun </p>
+        </div>
+    </div>
+</body>
+</html>

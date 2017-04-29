@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .fli {
+        width: 30px;
+        height: 15px;
+        margin-bottom: 10px;
+        text-align: center;
+        line-height: 15px;
+        background: #ff7f7c;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .fli:hover {
+        background: red;
+        color: #fff;
+    }
+
+    #turn {
+        position: fixed;
+        bottom: 20px;
+        right: 100px;
+        text-decoration: none;
+        display: block;
+        width: 100px;
+        height: 30px;
+        border: 2px solid #dff0d8;
+        text-align: center;
+        line-height: 26px;
+        border-radius: 15px;
+        color:#000;
+    }
+    #turn:hover{
+        background: #ff93c6;
+        color:#fff;
+    }
+</style>
+<body>
+<div class="all" style="padding:10px 0;position:relative">
+    <div class="lia" ng-repeat="v in lists track by $index">
+        <div class="bg-success" style="padding-left:15px">{{v.index}}</div>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="d in v.peo">{{d.name}}</li>
+        </ul>
+    </div>
+    <ul class="floor" style="position:fixed;top:60px;right:10px">
+        <li class="fli" ng-click="jump(i)" ng-repeat="(i,v) in lists track by $index">{{v.index}}</li>
+    </ul>
+</div>
+<a href="http://localhost:4000/#!/contact" id="turn">编辑联系人</a>
+</body>
+</html>
